@@ -6,13 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import {Mili} from './mili';
 import {Helmet} from "react-helmet";
 import {SplitLogin} from './splitlogin';
-
+import { UseMilligram } from './millilib';
+import {CardScroller} from './cardscroller';
 import {
   createBrowserRouter,
   RouterProvider,ßß
 } from "react-router-dom";
 
 import { Outlet, Link } from "react-router-dom";
+import { MainPage } from './mainpage';
 
 function Home() {
   return <ul>
@@ -25,6 +27,16 @@ function Home() {
     <li>
       <Link to={`hello`}>Your Friend</Link>
     </li>
+    <li>
+      <Link to={`splitlogin`}>SplitLogin</Link>
+    </li>
+    <li>
+      <Link to={`mainpage`}>MainPage</Link>
+    </li>
+    <li>
+      <Link to={`cards`}>Cards</Link>
+    </li>
+    
   </ul>;
 }
 
@@ -32,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path:"cards",
+    element: <CardScroller/>,
   },
   {
     path: "/mili",
@@ -49,6 +65,11 @@ const router = createBrowserRouter([
     path: "/splitlogin/",
     element: <SplitLogin/>,
   },
+  {
+    path: "/mainpage/",
+    element: <MainPage/>,
+  },
+
   
 ]);
 

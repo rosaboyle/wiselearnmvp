@@ -3,6 +3,8 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { useNavigate } from "react-router-dom";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -26,55 +28,45 @@ if (app.name && typeof window !== 'undefined') {
 const provider = new GoogleAuthProvider();
 
 const auth = getAuth();
-const signup = async () => await signInWithPopup(auth, provider)
-  .then((result) => {
-    console.log({result});
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    console.log({credential});
-    if (credential!==null){
-         const token = credential.accessToken;
-      console.log({token});
-    }// The signed-in user info.
-    const user = result.user;
-    console.log({user});
-    // ...
-  }).catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    // ...
-  });
 
-// export default function Login() {
-//     return <>Hello There Just Checking out<Button onClick={signup}/>
-//     </>
-// }
-
-// export default function Login() {
-//     const signInWithGoogle = () => {
-//         auth.signInWithPopup(provider);
-//     };
-    
-//     return (
-//         <div>
-//         <button onClick={signInWithGoogle}>Sign in with Google</button>
-//         </div>
-//     );
-//     }
 
 export function SplitLogin() {
-
+    const navigate = useNavigate();
+    const signup = async () => await signInWithPopup(auth, provider)
+    .then((result) => {
+      // console.log({result});
+      // const navigate = useNavigate();
+  
+      console.log({result});
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      console.log({credential});
+      if (credential!==null){
+           const token = credential.accessToken;
+        console.log({token});
+      }// The signed-in user info.
+      const user = result.user;
+      console.log({user});
+      console.log("redirecting");
+      navigate('/mili');
+      // ...
+    }).catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      // const email = error.customData.email;
+      // The AuthCredential type that was used.
+      // const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+    });
+  
     return <>
         <div className="split left">
             <div className="centered">
-                <img src="http://placekitten.com/200/200" alt="Avatar woman" />
-                <h2>Jane Flex</h2>
-                <p>Some text.</p>
+                <h1>Resume AI</h1>
+                <h3>Supercharge your job search</h3>
+                <h4>by generating personlized Job-specific Resume and cover letters</h4>
             </div>
         </div>
 

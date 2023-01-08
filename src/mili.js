@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet";
 
-
+import { UseMilligram } from "./millilib";
 export function Mili() {
     return <>
-
+        <UseMilligram />
         <div style={{width:"50%", margin:"auto", padding:"10px"}}>
         <a class="button" href="#">Default Button</a>
         <button class="button button-outline">Outlined Button</button>
