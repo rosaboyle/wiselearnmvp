@@ -15,7 +15,7 @@ export function Mili() {
             <title>My Title</title>
             <link rel="canonical" href="http://mysite.com/example" />
         </Helmet>
-        <div style={{width:"90%", margin:"auto", padding:"10px"}}>
+        <div style={{width:"50%", margin:"auto", padding:"10px"}}>
         <a class="button" href="#">Default Button</a>
         <button class="button button-outline">Outlined Button</button>
         <p>The base type is 1.6rem (16px) over 1.6 line height (24px)</p>
