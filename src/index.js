@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Mili} from './mili';
 import {Helmet} from "react-helmet";
+import {SplitLogin} from './splitlogin';
 
 import {
   createBrowserRouter,
@@ -27,7 +28,6 @@ function Home() {
   </ul>;
 }
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -45,7 +45,15 @@ const router = createBrowserRouter([
     path: "/watcha/:id",
     element: <div>Watch!</div>,
   },
+  {
+    path: "/splitlogin/",
+    element: <SplitLogin/>,
+  },
+  
 ]);
+
+
+
 
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));

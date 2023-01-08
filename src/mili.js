@@ -3,18 +3,7 @@ import { Helmet } from "react-helmet";
 
 export function Mili() {
     return <>
-        <Helmet>
 
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
-
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
-
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css" />
-
-            <meta charSet="utf-8" />
-            <title>My Title</title>
-            <link rel="canonical" href="http://mysite.com/example" />
-        </Helmet>
         <div style={{width:"50%", margin:"auto", padding:"10px"}}>
         <a class="button" href="#">Default Button</a>
         <button class="button button-outline">Outlined Button</button>
