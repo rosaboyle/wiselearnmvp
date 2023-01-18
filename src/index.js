@@ -8,6 +8,8 @@ import {Helmet} from "react-helmet";
 import {SplitLogin} from './splitlogin';
 import { UseMilligram } from './millilib';
 import {CardScroller} from './cardscroller';
+import {Form} from './form';
+
 import {
   createBrowserRouter,
   RouterProvider,ßß
@@ -20,6 +22,9 @@ function Home() {
   return <ul>
     <li>
       <Link to={`mili`}>Miligram</Link>
+    </li>
+    <li>
+      <Link to={`form`}>Form</Link>
     </li>
     <li>
       <Link to={`watcha/1`}>Your Name</Link>
@@ -44,6 +49,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/form",
+    element: <Form />,
   },
   {
     path:"cards",
