@@ -10,12 +10,9 @@ import { UseMilligram } from './millilib';
 
 export function Form() {
     const [name, setName] = useState("CJ Patoilo");
-    const [changeMade, setChangeMade] = useState(0);
-    const [, updateState] = React.useState();
-    const forceUpdate1 = React.useCallback(() => updateState({}), []);
 
-    // const [fields, setFields] = useState([]);
-    const [educations, setEducations] = useState([]);
+    const [fields, setFields] = useState([]);
+    // const [educations, setEducations] = useState([]);
 
     const updateName = (e) => {
         console.log(e.target.value);
