@@ -1,5 +1,18 @@
 export function resumeobject() {
-    return {
+    const resume0 = {
+        name: "",
+        educations: [],
+        experiences: [],
+        skills:[],
+        projects:[],
+        languages:[],
+        certifications:[],
+        awards:[],
+        publications:[]
+
+    }
+
+    const resume1 =  {
         "name": "Dheeraj Mohandas Pai",
         "educations": [
             {
@@ -146,4 +159,5 @@ export function resumeobject() {
             }
         ]
     }
+    return resume0
 }

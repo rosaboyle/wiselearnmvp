@@ -11,7 +11,10 @@ import { UseMilligram } from './millilib';
 
 
 export function Form() {
+    
+    // let resume1 = resume0;
     const resume1 = resumeobject()
+    // resume1[]
     console.log({resume1});
     const [name, setName] = useState(resume1['name']);
     const [numbers, setNumbers] = useState([8, 6, 4, 9, 7, 3, 1, 2]);
@@ -25,13 +28,13 @@ export function Form() {
 
     // const [fields, setFields] = useState([]);
     const [educations, setEducations] = useState(resume1['educations']);
-    const [experiences, setExperiences] = useState([]);
-    const [skills, setSkills] = useState([]);
-    const [projects, setProjects] = useState([]);
-    const [awards, setAwards] = useState([]);
-    const [certifications, setCertifications] = useState([]);
-    const [languages, setLanguages] = useState([]);
-    const [publications, setPublications] = useState([]);
+    const [experiences, setExperiences] = useState(resume1['experiences']);
+    const [skills, setSkills] = useState(resume1['skills']);
+    const [projects, setProjects] = useState(resume1['projects']);
+    const [awards, setAwards] = useState(resume1['awards']);
+    const [certifications, setCertifications] = useState(resume1['certifications']);
+    const [languages, setLanguages] = useState(resume1['languages']);
+    const [publications, setPublications] = useState(resume1['publications']);
 
     const updateName = (e) => {
         console.log(e.target.value);
