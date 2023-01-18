@@ -12,31 +12,28 @@ export function Form() {
     const [name, setName] = useState("CJ Patoilo");
 
     const [fields, setFields] = useState([]);
-    // const [educations, setEducations] = useState([]);
 
     const updateName = (e) => {
         console.log(e.target.value);
         setName(e.target.value);
     }
 
-    // const addField = () => {
-    //     setFields([...fields, { education: "", GPA: "", StartDate: "", EndDate: "" }]);
-    // }
-
-    const addEducation = () => {
-        setEducations([...educations, { education: "", GPA: "", StartDate: "", EndDate: "", randomKey: Math.random() }]);
+    const addField = () => {
+        setFields([...fields, { education: "", GPA: "", StartDate: "", EndDate: "" }]);
     }
 
 
 
 
 
-    const updateField = (e, index, key, Lfield, setLfield) => {
+
+
+    const updateField = (e, index, key) => {
         console.log(e.target.value);
         console.log({index});
-        const newFields = [...Lfield];
+        const newFields = [...field];
         newFields[index][key] = e.target.value;
-        setLfield(newFields);
+        setield(newFields);
     }
 
 
