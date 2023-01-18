@@ -1,6 +1,7 @@
 import { useState, useReducer } from 'react';
 import React from "react";
 
+import {resumeobject} from './resumeobject';
 import { Helmet } from 'react-helmet';
 
 
@@ -8,8 +9,11 @@ import { SplitLogin } from './splitlogin';
 import { UseMilligram } from './millilib';
 
 
+
 export function Form() {
-    const [name, setName] = useState("CJ Patoilo");
+    const resume1 = resumeobject()
+    console.log({resume1});
+    const [name, setName] = useState(resume1['name']);
     const [numbers, setNumbers] = useState([8, 6, 4, 9, 7, 3, 1, 2]);
     const sortEvent = () => {
         setNumbers(num => [...num.sort()]);
@@ -20,7 +24,7 @@ export function Form() {
     const forceUpdate1 = React.useCallback(() => updateState({}), []);
 
     // const [fields, setFields] = useState([]);
-    const [educations, setEducations] = useState([]);
+    const [educations, setEducations] = useState(resume1['educations']);
     const [experiences, setExperiences] = useState([]);
     const [skills, setSkills] = useState([]);
     const [projects, setProjects] = useState([]);
@@ -32,6 +36,18 @@ export function Form() {
     const updateName = (e) => {
         console.log(e.target.value);
         setName(e.target.value);
+    }
+
+    const resume = {
+        name: name,
+        educations: educations,
+        experiences: experiences,
+        skills: skills,
+        projects: projects,
+        awards: awards,
+        certifications: certifications,
+        languages: languages,
+        publications: publications
     }
 
     // const addField = () => {
@@ -150,14 +166,14 @@ export function Form() {
             return <>
 
                 <div>
-                    <label for="educationField">Education</label>\
-                    <input type="text" placeholder="Carnegie Mellon University" id="educationField" onChange={(event) => updateField(event, index, "education", educations, setEducations)}></input>
+                    <label for="educationField">Education</label>
+                    <input type="text" placeholder="Carnegie Mellon University" value={education["education"]} id="educationField" onChange={(event) => updateField(event, index, "education", educations, setEducations)}></input>
                     <label for="GPAField">GPA</label>
-                    <input type="text" placeholder="e.g: 4.0/4.0" id="GPAField" onChange={(event) => updateField(event, index, "GPA", educations, setEducations)}></input>
+                    <input type="text" placeholder="e.g: 4.0/4.0" id="GPAField" value={education["GPA"]} onChange={(event) => updateField(event, index, "GPA", educations, setEducations)}></input>
                     <label for="StartDateField">Start Date</label>
-                    <input type="text" placeholder="e.g: Aug 2021" id="StartDateField" onChange={(event) => updateField(event, index, "StartDate", educations, setEducations)}></input>
+                    <input type="text" placeholder="e.g: Aug 2021" id="StartDateField" value={education["StartDate"]} onChange={(event) => updateField(event, index, "StartDate", educations, setEducations)}></input>
                     <label for="EndDateField">End Date</label>
-                    <input type="text" placeholder="e.g: Dec 2022" id="EndDateField" onChange={(event) => updateField(event, index, "EndDate", educations, setEducations)}></input>
+                    <input type="text" placeholder="e.g: Dec 2022" id="EndDateField" value={education["EndDate"]} onChange={(event) => updateField(event, index, "EndDate", educations, setEducations)}></input>
                     <button onClick={() => removeField(index, educations, setEducations)}>Remove</button>
                     {/* TODO */}
 
@@ -169,23 +185,24 @@ export function Form() {
         <button onClick={addEducation}>Add Education</button>
         {/* TODO: REMOVE THIS // DEBUG ONLY */}
         <button onClick={(e) => { console.log({ educations }) }}> Log Educations</button>
+
         {experiences.map((experience, index) => {
 
             return <>
 
                 <div>
                     <label for="experienceField">Job Title</label>
-                    <input type="text" placeholder="e.g: Software Engineer Intern" id="experienceField" onChange={(event) => updateField(event, index, "jobTitle", experiences, setExperiences)}></input>
+                    <input type="text" placeholder="e.g: Software Engineer Intern" value={experience["jobTitle"]} id="experienceField" onChange={(event) => updateField(event, index, "jobTitle", experiences, setExperiences)}></input>
                     <label for="companyField">Company</label>
-                    <input type="text" placeholder="e.g: Google" id="companyField" onChange={(event) => updateField(event, index, "company", experiences, setExperiences)}></input>
+                    <input type="text" placeholder="e.g: Google" id="companyField" value={experience["company"]} onChange={(event) => updateField(event, index, "company", experiences, setExperiences)}></input>
                     <label for="StartDateField">Start Date</label>
-                    <input type="text" placeholder="e.g: Aug 2021" id="StartDateField" onChange={(event) => updateField(event, index, "startDate", experiences, setExperiences)}></input>
+                    <input type="text" placeholder="e.g: Aug 2021" id="StartDateField" value={experience["startDate"]} onChange={(event) => updateField(event, index, "startDate", experiences, setExperiences)}></input>
                     <label for="EndDateField">End Date</label>
-                    <input type="text" placeholder="e.g: Dec 2022" id="EndDateField" onChange={(event) => updateField(event, index, "endDate", experiences, setExperiences)}></input>
+                    <input type="text" placeholder="e.g: Dec 2022" id="EndDateField" value={experience["endDate"]} onChange={(event) => updateField(event, index, "endDate", experiences, setExperiences)}></input>
                     <label for="descriptionField">Description</label>
-                    <input type="text" placeholder="e.g: Worked on the Google Search Engine" id="descriptionField" onChange={(event) => updateField(event, index, "description", experiences, setExperiences)}></input>
+                    <input type="text" placeholder="e.g: Worked on the Google Search Engine" value={experience["description"]} id="descriptionField" onChange={(event) => updateField(event, index, "description", experiences, setExperiences)}></input>
                     <label for="skillsField">Skills</label>
-                    <input type="text" placeholder="e.g: Java, Python, C++" id="skillsField" onChange={(event) => updateField(event, index, "skills", experiences, setExperiences)}></input>
+                    <input type="text" placeholder="e.g: Java, Python, C++" id="skillsField" value={experience["skills"]} onChange={(event) => updateField(event, index, "skills", experiences, setExperiences)}></input>
 
 
                     <button onClick={() => removeField(index, experiences, setExperiences)}>Remove</button>
@@ -203,9 +220,9 @@ export function Form() {
 
                 <div>
                     <label for="skillField">Skill</label>
-                    <input type="text" placeholder="e.g: Java" id="skillField" onChange={(event) => updateField(event, index, "skill", skills, setSkills)}></input>
+                    <input type="text" placeholder="e.g: Java" value={skill["skill"]} id="skillField" onChange={(event) => updateField(event, index, "skill", skills, setSkills)}></input>
                     <label for="levelField">Level</label>
-                    <input type="text" placeholder="e.g: Beginner" id="levelField" onChange={(event) => updateField(event, index, "level", skills, setSkills)}></input>
+                    <input type="text" placeholder="e.g: Beginner" value={skill["level"]} id="levelField" onChange={(event) => updateField(event, index, "level", skills, setSkills)}></input>
                     {/* <label for="descriptionField">Description</label>
                     <input type="text" placeholder="e.g: I know the basics of Java" id="descriptionField" onChange={(event) => updateField(event, index, "description", skills, setSkills)}></input> */}
                     <button onClick={() => removeField(index, skills, setSkills)}>Remove</button>
@@ -222,18 +239,18 @@ export function Form() {
 
                 <div>
                     <label for="projectField">Project</label>
-                    <input type="text" placeholder="e.g: Google Search Engine" id="projectField" onChange={(event) => updateField(event, index, "project", projects, setProjects)}></input>
+                    <input type="text" placeholder="e.g: Google Search Engine" id="projectField" value={project["project"]} onChange={(event) => updateField(event, index, "project", projects, setProjects)}></input>
                     <label for="descriptionField">Description</label>
-                    <input type="text" placeholder="e.g: I worked on the Google Search Engine" id="descriptionField" onChange={(event) => updateField(event, index, "description", projects, setProjects)}></input>
+                    <input type="text" placeholder="e.g: I worked on the Google Search Engine" value={project["description"]} id="descriptionField" onChange={(event) => updateField(event, index, "description", projects, setProjects)}></input>
                     
                     <label for="skillsField">Skills</label>
-                    <input type="text" placeholder="e.g: Java, Python, C++" id="skillsField" onChange={(event) => updateField(event, index, "skills", projects, setProjects)}></input>
+                    <input type="text" placeholder="e.g: Java, Python, C++" id="skillsField" value={project["skills"]} onChange={(event) => updateField(event, index, "skills", projects, setProjects)}></input>
                     <label for="StartDateField">Start Date</label>
-                    <input type="text" placeholder="e.g: Aug 2021" id="StartDateField" onChange={(event) => updateField(event, index, "startDate", projects, setProjects)}></input>
+                    <input type="text" placeholder="e.g: Aug 2021" id="StartDateField" value={project["startDate"]} onChange={(event) => updateField(event, index, "startDate", projects, setProjects)}></input>
                     <label for="EndDateField">End Date</label>
-                    <input type="text" placeholder="e.g: Dec 2022" id="EndDateField" onChange={(event) => updateField(event, index, "endDate", projects, setProjects)}></input>
+                    <input type="text" placeholder="e.g: Dec 2022" id="EndDateField" value={project["endDate"]} onChange={(event) => updateField(event, index, "endDate", projects, setProjects)}></input>
                     <label for="linkField">Link</label>
-                    <input type="text" placeholder="e.g: https://github.com/googleinc/repo" id="linkField" onChange={(event) => updateField(event, index, "link", projects, setProjects)}></input>
+                    <input type="text" placeholder="e.g: https://github.com/googleinc/repo" id="linkField" value={project["link"]} onChange={(event) => updateField(event, index, "link", projects, setProjects)}></input>
                     {/* <label for="imageField">Image</label>
                     <input type="text" placeholder="e.g: https://www.google.com" id="imageField" onChange={(event) => updateField(event, index, "image", projects, setProjects)}></input>
                     <label for="githubField">Github</label>
@@ -255,11 +272,11 @@ export function Form() {
             return <>
                 <div>
                     <label for="awardField">Award</label>
-                    <input type="text" placeholder="e.g: Google Search Engine" id="awardField" onChange={(event) => updateField(event, index, "award", awards, setAwards)}></input>
+                    <input type="text" placeholder="e.g: Google Search Engine" id="awardField" value={award["award"]} onChange={(event) => updateField(event, index, "award", awards, setAwards)}></input>
                     <label for="descriptionField">Description</label>
-                    <input type="text" placeholder="e.g: I worked on the Google Search Engine" id="descriptionField" onChange={(event) => updateField(event, index, "description", awards, setAwards)}></input>
+                    <input type="text" placeholder="e.g: I worked on the Google Search Engine" id="descriptionField" value={award["description"]} onChange={(event) => updateField(event, index, "description", awards, setAwards)}></input>
                     <label for="dateField">Date</label>
-                    <input type="text" placeholder="e.g: Aug 2021" id="dateField" onChange={(event) => updateField(event, index, "date", awards, setAwards)}></input>
+                    <input type="text" placeholder="e.g: Aug 2021" id="dateField" value={award["date"]} onChange={(event) => updateField(event, index, "date", awards, setAwards)}></input>
                     <button onClick={() => removeField(index, awards, setAwards)}>Remove</button>
                     {/* <button onClick={() => movefield(index, "up", awards, setAwards)}>Move Up</button> */}
                     {/* <button onClick={() => movefield(index, "down", awards, setAwards)}>Move Down</button> */}
@@ -275,11 +292,11 @@ export function Form() {
             return <>
                 <div>
                     <label for="certificationField">Certification</label>
-                    <input type="text" placeholder="e.g: Google Search Engine" id="certificationField" onChange={(event) => updateField(event, index, "certification", certifications, setCertifications)}></input>
+                    <input type="text" placeholder="e.g: Google Search Engine" id="certificationField" value={certification["certification"]} onChange={(event) => updateField(event, index, "certification", certifications, setCertifications)}></input>
                     <label for="descriptionField">Description</label>
-                    <input type="text" placeholder="e.g: I worked on the Google Search Engine" id="descriptionField" onChange={(event) => updateField(event, index, "description", certifications, setCertifications)}></input>
+                    <input type="text" placeholder="e.g: I worked on the Google Search Engine" id="descriptionField" value={certification["description"]} onChange={(event) => updateField(event, index, "description", certifications, setCertifications)}></input>
                     <label for="dateField">Date</label>
-                    <input type="text" placeholder="e.g: Aug 2021" id="dateField" onChange={(event) => updateField(event, index, "date", certifications, setCertifications)}></input>
+                    <input type="text" placeholder="e.g: Aug 2021" id="dateField"  value={certification["date"]} onChange={(event) => updateField(event, index, "date", certifications, setCertifications)}></input>
                     <button onClick={() => removeField(index, certifications, setCertifications)}>Remove</button>
                     {/* <button onClick={() => movefield(index, "up", certifications, setCertifications)}>Move Up</button> */}
                     {/* <button onClick={() => movefield(index, "down", certifications, setCertifications)}>Move Down</button> */}
@@ -294,13 +311,13 @@ export function Form() {
             return <>
                 <div>
                     <label for="publicationField">Publication</label>
-                    <input type="text" placeholder="e.g: Google Search Engine" id="publicationField" onChange={(event) => updateField(event, index, "publication", publications, setPublications)}></input>
+                    <input type="text" placeholder="e.g: Google Search Engine" id="publicationField" value={publication["publication"]} onChange={(event) => updateField(event, index, "publication", publications, setPublications)}></input>
                     <label for="descriptionField">Description</label>
-                    <input type="text" placeholder="e.g: I worked on the Google Search Engine" id="descriptionField" onChange={(event) => updateField(event, index, "description", publications, setPublications)}></input>
+                    <input type="text" placeholder="e.g: I worked on the Google Search Engine" id="descriptionField" value={publication["description"]} onChange={(event) => updateField(event, index, "description", publications, setPublications)}></input>
                     <label for="dateField">Date</label>
-                    <input type="text" placeholder="e.g: Aug 2021" id="dateField" onChange={(event) => updateField(event, index, "date", publications, setPublications)}></input>
+                    <input type="text" placeholder="e.g: Aug 2021" id="dateField" value={publication["date"]} onChange={(event) => updateField(event, index, "date", publications, setPublications)}></input>
                     <label for="linkField">Link</label>
-                    <input type="text" placeholder="e.g:https://www.google.com" id="linkField" onChange={(event) => updateField(event, index, "link", publications, setPublications)}></input>
+                    <input type="text" placeholder="e.g:https://www.google.com" id="linkField" value={publication["link"]} onChange={(event) => updateField(event, index, "link", publications, setPublications)}></input>
 
 
                     <button onClick={() => removeField(index, publications, setPublications)}>Remove</button>
@@ -316,9 +333,9 @@ export function Form() {
             return <>
                 <div>
                     <label for="languageField">Language</label>
-                    <input type="text" placeholder="e.g: English" id="languageField" onChange={(event) => updateField(event, index, "language", languages, setLanguages)}></input>
+                    <input type="text" placeholder="e.g: English" id="languageField" value={language["language"]} onChange={(event) => updateField(event, index, "language", languages, setLanguages)}></input>
                     <label for="levelField">Level</label>
-                    <input type="text" placeholder="e.g: Fluent" id="levelField" onChange={(event) => updateField(event, index, "level", languages, setLanguages)}></input>
+                    <input type="text" placeholder="e.g: Fluent" id="levelField" value={language["level"]} onChange={(event) => updateField(event, index, "level", languages, setLanguages)}></input>
                     <button onClick={() => removeField(index, languages, setLanguages)}>Remove</button>
                     {/* <button onClick={() => movefield(index, "up", languages, setLanguages)}>Move Up</button> */}
                     {/* <button onClick={() => movefield(index, "down", languages, setLanguages)}>Move Down</button> */}
@@ -328,6 +345,7 @@ export function Form() {
         })}
         <button onClick={addLanguage}>Add Language</button>
         <button onClick={(e) => { console.log({ languages }) }}> Log Languages</button>
-        
+
+        <button onClick={(e)=> {console.log({resume})}}>Log Resume</button>
     </>
 }
