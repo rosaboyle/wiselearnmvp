@@ -30,34 +30,24 @@ export function Mili() {
         </li>
         <li className="navigation-item">
           <a className="navigation-link" href="/" data-popover
-            >Home</a
-          >
-        </li>
-        <li className="navigation-item">
-          <a className="navigation-link" href="/" data-popover
-            >Sponsors</a
-          >
-        </li>
-        <li className="navigation-item">
-          <a className="navigation-link" href="/" data-popover
-            >Help</a
+            >Support</a
           >
         </li>
       </ul>
 
     </section>
   </nav>
-        <div style={{width:"50%", margin:"auto", padding:"80px 0px 0px 0px"}}>
-        {/* <a class="button" href="#">Default Button</a>
-        <button class="button button-outline">Outlined Button</button> */}
-        {/* <p>The base type is 1.6rem (16px) over 1.6 line height (24px)</p>
+        <div style={{width:"50%", margin:"auto", padding:"10px"}}>
+        <a class="button" href="#">Default Button</a>
+        <button class="button button-outline">Outlined Button</button>
+        <p>The base type is 1.6rem (16px) over 1.6 line height (24px)</p>
         <a>Anchor</a>
         <em>Emphasis</em>
-        <small>Small</small> */}
-        {/* <strong>Strong</strong>
-        <u>Underline</u> */}
-        <h1>SafeBench Competition</h1>
-        <h2>A Benchmarking Platform for Safety Evaluation of Autonomous Vehicles</h2>
+        <small>Small</small>
+        <strong>Strong</strong>
+        <u>Underline</u>
+        <h1>Heading</h1>
+        <h2>Heading</h2>
         <h3>Heading</h3>
         <h4>Heading</h4>
         <h5>Heading</h5>

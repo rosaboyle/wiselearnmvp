@@ -55,7 +55,7 @@ const router = createBrowserRouter([
     element: <Form />,
   },
   {
-    path:"cards",
+    path:"/cards",
     element: <CardScroller/>,
   },
   {
