@@ -21,25 +21,25 @@ import { MainPage } from './mainpage';
 function Home() {
   return <ul>
     <li>
-      <Link to={`mili`}>Miligram</Link>
+      <Link to={`/mili`}>Miligram</Link>
     </li>
     <li>
-      <Link to={`form`}>Form</Link>
+      <Link to={`/form`}>Form</Link>
     </li>
     <li>
-      <Link to={`watcha/1`}>Your Name</Link>
+      <Link to={`/watcha/1`}>Your Name</Link>
     </li>
     <li>
-      <Link to={`hello`}>Your Friend</Link>
+      <Link to={`/hello`}>Your Friend</Link>
     </li>
     <li>
-      <Link to={`splitlogin`}>SplitLogin</Link>
+      <Link to={`/splitlogin`}>SplitLogin</Link>
     </li>
     <li>
-      <Link to={`mainpage`}>MainPage</Link>
+      <Link to={`/mainpage`}>MainPage</Link>
     </li>
     <li>
-      <Link to={`cards`}>Cards</Link>
+      <Link to={`/cards`}>Cards</Link>
     </li>
     
   </ul>;
@@ -47,7 +47,7 @@ function Home() {
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/content",
     element: <Home />,
   },
   {
