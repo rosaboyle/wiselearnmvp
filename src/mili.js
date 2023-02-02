@@ -1,61 +1,60 @@
 import { Helmet } from "react-helmet";
 
 import { UseMilligram } from "./millilib";
+export function NavigationBar() {
+  return (
+    <nav className="navigation">
+    <title>SafeBench | A Metaverse competition for self driving cars</title>
+    {/* <link rel="icon" href="https://milligram.io/images/icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="../dist/milligram.min.css" />
+     */}
+    <link rel="stylesheet" href="https://milligram.io/styles/main.css" />
+    <section className="container">
+
+      <h1 className="title">SafeBench</h1>
+
+      <ul className="navigation-list float-right">
+        <li className="navigation-item">
+          <a className="navigation-link" href="/join" data-popover
+          >Join Competition</a
+          >
+        </li>
+        <li className="navigation-item">
+          <a className="navigation-link" href="/" data-popover
+          >Home</a
+          >
+        </li>
+        <li className="navigation-item">
+          <a className="navigation-link" href="/" data-popover
+          >Sponsors</a
+          >
+        </li>
+        <li className="navigation-item">
+          <a className="navigation-link" href="/" data-popover
+          >Help</a
+          >
+        </li>
+      </ul>
+
+    </section>
+  </nav>
+  )
+  }
 
 export function Mili() {
   return <>
     <UseMilligram />
-    <nav className="navigation">
-      <title>SafeBench | A Metaverse competition for self driving cars</title>
-      <link rel="icon" href="https://milligram.io/images/icon.png" />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
-      />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
-      />
-      <link rel="stylesheet" href="../dist/milligram.min.css" />
-      <link rel="stylesheet" href="https://milligram.io/styles/main.css" />
-      <section className="container">
-
-        <h1 className="title">SafeBench</h1>
-
-        <ul className="navigation-list float-right">
-          <li className="navigation-item">
-            <a className="navigation-link" href="/join" data-popover
-            >Join Competition</a
-            >
-          </li>
-          <li className="navigation-item">
-            <a className="navigation-link" href="/" data-popover
-            >Home</a
-            >
-          </li>
-          <li className="navigation-item">
-            <a className="navigation-link" href="/" data-popover
-            >Sponsors</a
-            >
-          </li>
-          <li className="navigation-item">
-            <a className="navigation-link" href="/" data-popover
-            >Help</a
-            >
-          </li>
-        </ul>
-
-      </section>
-    </nav>
+   <NavigationBar/>
     <div style={{ width: "50%", margin: "auto", padding: "80px 0px 0px 0px" }}>
-      {/* <a class="button" href="#">Default Button</a>
-        <button class="button button-outline">Outlined Button</button> */}
-      {/* <p>The base type is 1.6rem (16px) over 1.6 line height (24px)</p>
-        <a>Anchor</a>
-        <em>Emphasis</em>
-        <small>Small</small> */}
-      {/* <strong>Strong</strong>
-        <u>Underline</u> */}
+
       <h1>SafeBench Competition</h1>
       <h2>A Benchmarking Platform for Safety Evaluation of Autonomous Vehicles</h2>
       <h3>Heading</h3>

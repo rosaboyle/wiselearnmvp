@@ -11,6 +11,9 @@ import { CardScroller } from './cardscroller';
 import { Form } from './form';
 import { Leaderboard1 } from './leaderboard';
 import { SubmitForm } from './submit';
+import {RegisterForm} from './register';
+import {RegisterTeam} from './registerteam';
+import {Sponsors} from './sponsors';
 
 import {
   createBrowserRouter,
@@ -49,6 +52,15 @@ function Home() {
     </li>
     <li>
       <Link to={`/submit`}>Submit Form</Link>
+    </li>
+    <li>
+      <Link to={`/register`}>Register</Link>
+    </li>
+    <li>
+      <Link to={`/registerteam`}>Register Team</Link>
+    </li>
+    <li>
+      <Link to={`/sponsors`}>Sponsors</Link>
     </li>
 
 
@@ -96,7 +108,21 @@ const router = createBrowserRouter([
     path: "/submit",
     element: <SubmitForm />,
   },
+  {
+    path: "/registerteam",
+    element: <RegisterTeam />,
+  },
+  
 
+  {
+    path: "/register",
+    element: <RegisterForm />,
+  },
+  {
+    path: "/sponsors",
+    element: <Sponsors />,
+  },
+  
 ]);
 
 

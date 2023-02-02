@@ -8,15 +8,15 @@ export function SubmitForm() {
 
             <form>
                 <fieldset>
-
-
                     <legend>Submit Form</legend>
+                    <input type="file" id="myFile" name="filename"/>
+
                     <label for="commentField">Comment</label>
                     <textarea placeholder="Updates: changed .." id="commentField"></textarea>
                     <progress className="progress" value="66" max="100">
                         <div className="progress">
                             <span className="progress-bar" width="25px">
-                                25%
+                                66%
                             </span>
                         </div>
                     </progress>
