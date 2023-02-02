@@ -3,16 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {Mili} from './mili';
-import {Helmet} from "react-helmet";
-import {SplitLogin} from './splitlogin';
+import { Mili } from './mili';
+import { Helmet } from "react-helmet";
+import { SplitLogin } from './splitlogin';
 import { UseMilligram } from './millilib';
-import {CardScroller} from './cardscroller';
-import {Form} from './form';
+import { CardScroller } from './cardscroller';
+import { Form } from './form';
+import { Leaderboard1 } from './leaderboard';
+import { SubmitForm } from './submit';
 
 import {
   createBrowserRouter,
-  RouterProvider,ßß
+  RouterProvider, ßß
 } from "react-router-dom";
 
 import { Outlet, Link } from "react-router-dom";
@@ -20,6 +22,7 @@ import { MainPage } from './mainpage';
 
 function Home() {
   return <ul>
+
     <li>
       <Link to={`/mili`}>Miligram</Link>
     </li>
@@ -41,7 +44,14 @@ function Home() {
     <li>
       <Link to={`/cards`}>Cards</Link>
     </li>
-    
+    <li>
+      <Link to={`/leaderboard`}>Leaderboard</Link>
+    </li>
+    <li>
+      <Link to={`/submit`}>Submit Form</Link>
+    </li>
+
+
   </ul>;
 }
 
@@ -51,12 +61,16 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
+    path: "/leaderboard",
+    element: <Leaderboard1 />,
+  },
+  {
     path: "/form",
     element: <Form />,
   },
   {
-    path:"/cards",
-    element: <CardScroller/>,
+    path: "/cards",
+    element: <CardScroller />,
   },
   {
     path: "/mili",
@@ -72,14 +86,17 @@ const router = createBrowserRouter([
   },
   {
     path: "/splitlogin/",
-    element: <SplitLogin/>,
+    element: <SplitLogin />,
   },
   {
     path: "/mainpage/",
-    element: <MainPage/>,
+    element: <MainPage />,
+  },
+  {
+    path: "/submit",
+    element: <SubmitForm />,
   },
 
-  
 ]);
 
 
