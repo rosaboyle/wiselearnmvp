@@ -85,7 +85,7 @@ const router = createBrowserRouter([
     element: <CardScroller />,
   },
   {
-    path: "/mili",
+    path: "/",
     element: <Mili />,
   },
   {

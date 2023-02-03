@@ -1,8 +1,12 @@
 import { UseMilligram } from "./millilib"
+import { NavigationBar} from './mili'
+
 export function RegisterForm() {
 
 
     return (
+        <>
+        <NavigationBar/>
         <div style={{ width: "40%", margin: "auto", padding: "80px 0px 0px 0px" }}>
             <UseMilligram />
 
@@ -30,6 +34,7 @@ export function RegisterForm() {
                 </fieldset>
             </form>
         </div>
+        </>
 
     )
 }
