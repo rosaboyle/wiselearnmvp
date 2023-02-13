@@ -7,11 +7,11 @@ const FileUpload = () => {
   const [message, setMessage] = useState("");
   const [fileInfos, setFileInfos] = useState([]);
 
-  // useEffect(() => {
-  //   UploadService.getFiles().then((response) => {
-  //     setFileInfos(response.data);
-  //   });
-  // }, []);
+  useEffect(() => {
+    UploadService.getFiles().then((response) => {
+      setFileInfos(response.data);
+    });
+  }, []);
 
   const selectFile = (event) => {
     const { files } = event.target;
