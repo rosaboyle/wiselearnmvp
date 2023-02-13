@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import UploadService from "./upload2S3";
+import UploadService from "./uploads3";
 
 const FileUpload = () => {
   const [currentFile, setCurrentFile] = useState();
@@ -7,11 +7,11 @@ const FileUpload = () => {
   const [message, setMessage] = useState("");
   const [fileInfos, setFileInfos] = useState([]);
 
-  useEffect(() => {
-    UploadService.getFiles().then((response) => {
-      setFileInfos(response.data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   UploadService.getFiles().then((response) => {
+  //     setFileInfos(response.data);
+  //   });
+  // }, []);
 
   const selectFile = (event) => {
     const { files } = event.target;
@@ -36,7 +36,7 @@ const FileUpload = () => {
       })
       .catch((err) => {
         setProgress(0);
-
+        console.log(err)
         if (err.response && err.response.data && err.response.data.message) {
           setMessage(err.response.data.message);
         } else {
