@@ -14,6 +14,7 @@ import { SubmitForm } from './submit';
 import {RegisterForm} from './register';
 import {RegisterTeam} from './registerteam';
 import {Sponsors} from './sponsors';
+import FileUpload from './fileupload';
 
 import {
   createBrowserRouter,
@@ -29,6 +30,7 @@ function Home() {
     <li>
       <Link to={`/mili`}>Miligram</Link>
     </li>
+
     <li>
       <Link to={`/form`}>Form</Link>
     </li>
@@ -62,6 +64,10 @@ function Home() {
     <li>
       <Link to={`/sponsors`}>Sponsors</Link>
     </li>
+    <li>
+      <Link to={`/fileupload`}>File Upload</Link>
+    </li>
+
 
 
   </ul>;
@@ -121,6 +127,10 @@ const router = createBrowserRouter([
   {
     path: "/sponsors",
     element: <Sponsors />,
+  },
+  {
+    path: "/fileupload",
+    element: <FileUpload />,
   },
   
 ]);
