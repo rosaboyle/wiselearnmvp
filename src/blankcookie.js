@@ -9,6 +9,8 @@ export function BankPage() {
         url = 'https://safebenchbackend1-54ohddydnq-uc.a.run.app/'
         url = 'https://rosaboyle-organic-guacamole-r4p75rwxqqhxj4r-9151.preview.app.github.dev/'
         url = 'https://safebenchbackend1-54ohddydnq-uc.a.run.app'
+        url = 'https://safebenchbackend1-54ohddydnq-uc.a.run.app'
+
         axios.get(url, {
             withCredentials: true,
         })
