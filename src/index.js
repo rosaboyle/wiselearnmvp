@@ -14,6 +14,7 @@ import { SubmitForm } from './submit';
 import {RegisterForm} from './register';
 import {RegisterTeam} from './registerteam';
 import {Sponsors} from './sponsors';
+import {BankPage} from './blankcookie';
 import FileUpload from './fileupload';
 
 import {
@@ -67,8 +68,12 @@ function Home() {
     <li>
       <Link to={`/fileupload`}>File Upload</Link>
     </li>
-
-
+    <li>
+      <Link to={`/content`}>Content</Link>
+    </li>
+    <li>
+      <Link to={`/bank`}>Blank Page</Link>
+    </li>
 
   </ul>;
 }
@@ -120,6 +125,7 @@ const router = createBrowserRouter([
   },
   
 
+
   {
     path: "/register",
     element: <RegisterForm />,
@@ -133,6 +139,10 @@ const router = createBrowserRouter([
     element: <FileUpload />,
   },
   
+  {
+    path: "/bank",
+    element: <BankPage />,
+  },
 ]);
 
 

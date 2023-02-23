@@ -13,7 +13,7 @@ maxBodyLength: Infinity,
   data : data
 };
 
-a = axios(config)
+a = await axios(config)
 // .then(function (response) {
 //   console.log(JSON.stringify(response.data));
 // })
