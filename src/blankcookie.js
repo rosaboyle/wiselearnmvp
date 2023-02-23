@@ -6,12 +6,12 @@ export function BankPage() {
 
     function sendReq(){
         let url = 'https://eodcgezih9e7crf.m.pipedream.net'
-
+        url = 'https://safebenchbackend1-54ohddydnq-uc.a.run.app/'
         axios.get(url, {
             withCredentials: true,
         })
         .then((response) => {
-            setBank(response.data.body);
+            setBank(response.data);
         })
         .catch((error) => {
             console.log(error);
