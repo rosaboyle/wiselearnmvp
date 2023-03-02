@@ -16,6 +16,8 @@ export function BankPage() {
         })
         .then((response) => {
             setBank(response.data);
+            const cookie = document.cookie
+            console.log({cookie})
         })
         .catch((error) => {
             console.log(error);
@@ -27,7 +29,7 @@ export function BankPage() {
         <div>
             {bank}
             <button onClick={sendReq}>Send Request</button>
-            <h1>Bank Page</h1>
+            <h1>Blank Page1</h1>
         </div>
 
     )
