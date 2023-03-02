@@ -59,6 +59,7 @@ export function SplitLogin() {
                         'Accept': 'application/json'
 
                     },
+                    withCredentials: true,
 
                     url: 'https://safebenchbackend1-54ohddydnq-uc.a.run.app/auth/googlelogin',
                     data: {
