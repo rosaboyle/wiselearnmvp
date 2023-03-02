@@ -71,6 +71,7 @@ export function SplitLogin() {
                 }
             )
             console.log(res.data)
+            console.log("New Auth")
 
             // navigate('/mili');
             // ...
