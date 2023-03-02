@@ -12,13 +12,13 @@ import axios from 'axios';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAwCjywNxYuLBiVNPRvMmqnXOeQZkAHvX0",
-  authDomain: "resumeaicmu.firebaseapp.com",
-  projectId: "resumeaicmu",
-  storageBucket: "resumeaicmu.appspot.com",
-  messagingSenderId: "360815956098",
-  appId: "1:360815956098:web:e7b67e3fde866c1be9649b",
-  measurementId: "G-V2QR53JPT5"
+    apiKey: "AIzaSyAwCjywNxYuLBiVNPRvMmqnXOeQZkAHvX0",
+    authDomain: "resumeaicmu.firebaseapp.com",
+    projectId: "resumeaicmu",
+    storageBucket: "resumeaicmu.appspot.com",
+    messagingSenderId: "360815956098",
+    appId: "1:360815956098:web:e7b67e3fde866c1be9649b",
+    measurementId: "G-V2QR53JPT5"
 };
 
 // Initialize Firebase
@@ -34,54 +34,54 @@ const auth = getAuth();
 export async function SplitLogin() {
     const navigate = useNavigate();
     const signup = async () => await signInWithPopup(auth, provider)
-    .then((result) => {
-      // console.log({result});
-      // const navigate = useNavigate();
-  
-      console.log({result});
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      console.log({credential});
-      if (credential!==null){
-           const token = credential.accessToken;
-        console.log({token});
-      }// The signed-in user info.
-      const user = result.user;
-      console.log({user});
-      console.log("redirecting");
-      axios(
-        {
-            method: 'post',
-            // headers with authorization token
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + credential.idToken
-                
-            },
+        .then(async (result) => {
+            // console.log({result});
+            // const navigate = useNavigate();
 
-            url: 'https://safebenchbackend1-54ohddydnq-uc.a.run.app/auth/googlelogin',
-            data: {
-                "name": user.displayName,
-                "email": user.email,
-                "photo": user.photoURL
-            }
+            console.log({ result });
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            console.log({ credential });
+            if (credential !== null) {
+                const token = credential.accessToken;
+                console.log({ token });
+            }// The signed-in user info.
+            const user = result.user;
+            console.log({ user });
+            console.log("redirecting");
+            await axios(
+                {
+                    method: 'post',
+                    // headers with authorization token
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + credential.idToken
 
-        }
-    )
-      
-    //   navigate('/mili');
-      // ...
-    }).catch((error) => {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // The email of the user's account used.
-      // const email = error.customData.email;
-      // The AuthCredential type that was used.
-      // const credential = GoogleAuthProvider.credentialFromError(error);
-      // ...
-    });
-  
+                    },
+
+                    url: 'https://safebenchbackend1-54ohddydnq-uc.a.run.app/auth/googlelogin',
+                    data: {
+                        "name": user.displayName,
+                        "email": user.email,
+                        "photo": user.photoURL
+                    }
+
+                }
+            )
+
+            navigate('/mili');
+            // ...
+        }).catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            // const email = error.customData.email;
+            // The AuthCredential type that was used.
+            // const credential = GoogleAuthProvider.credentialFromError(error);
+            // ...
+        });
+
     return <>
         <div className="split left">
             <div className="centered">
