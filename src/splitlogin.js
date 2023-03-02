@@ -31,7 +31,7 @@ const provider = new GoogleAuthProvider();
 const auth = getAuth();
 
 
-export async function SplitLogin() {
+export function SplitLogin() {
     const navigate = useNavigate();
     const signup = async () => await signInWithPopup(auth, provider)
         .then(async (result) => {
@@ -49,13 +49,14 @@ export async function SplitLogin() {
             const user = result.user;
             console.log({ user });
             console.log("redirecting");
-            await axios(
+            const res = await axios(
                 {
                     method: 'post',
                     // headers with authorization token
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'Bearer ' + credential.idToken
+                        'Authorization': 'Bearer ' + credential.idToken,
+                        'Accept': 'application/json'
 
                     },
 
@@ -68,13 +69,15 @@ export async function SplitLogin() {
 
                 }
             )
+            console.log(res.data)
 
-            navigate('/mili');
+            // navigate('/mili');
             // ...
         }).catch((error) => {
             // Handle Errors here.
             const errorCode = error.code;
             const errorMessage = error.message;
+            console.log("Some Error")
             // The email of the user's account used.
             // const email = error.customData.email;
             // The AuthCredential type that was used.
