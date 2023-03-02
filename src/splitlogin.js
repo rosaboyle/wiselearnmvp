@@ -4,6 +4,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -30,7 +31,7 @@ const provider = new GoogleAuthProvider();
 const auth = getAuth();
 
 
-export function SplitLogin() {
+export async function SplitLogin() {
     const navigate = useNavigate();
     const signup = async () => await signInWithPopup(auth, provider)
     .then((result) => {
@@ -48,7 +49,27 @@ export function SplitLogin() {
       const user = result.user;
       console.log({user});
       console.log("redirecting");
-      navigate('/mili');
+      axios(
+        {
+            method: 'post',
+            // headers with authorization token
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + credential.idToken
+                
+            },
+
+            url: 'https://safebenchbackend1-54ohddydnq-uc.a.run.app/auth/googlelogin',
+            data: {
+                "name": user.displayName,
+                "email": user.email,
+                "photo": user.photoURL
+            }
+
+        }
+    )
+      
+    //   navigate('/mili');
       // ...
     }).catch((error) => {
       // Handle Errors here.
@@ -64,9 +85,9 @@ export function SplitLogin() {
     return <>
         <div className="split left">
             <div className="centered">
-                <h1>Resume AI</h1>
-                <h3>Supercharge your job search</h3>
-                <h4>by generating personlized Job-specific Resume and cover letters</h4>
+                <h1>Safebench Competition</h1>
+                {/* <h3>Supercharge your job search</h3> */}
+                {/* <h4>by generating personlized Job-specific Resume and cover letters</h4> */}
             </div>
         </div>
 
