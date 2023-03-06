@@ -29,50 +29,50 @@ function Home() {
   return <ul>
 
     <li>
-      <Link to={`/mili`}>Miligram</Link>
+      <Link to={`/app/mili`}>Miligram</Link>
     </li>
 
     <li>
-      <Link to={`/form`}>Form</Link>
+      <Link to={`/app/form`}>Form</Link>
     </li>
     <li>
-      <Link to={`/watcha/1`}>Your Name</Link>
+      <Link to={`/app/watcha/1`}>Your Name</Link>
     </li>
     <li>
-      <Link to={`/hello`}>Your Friend</Link>
+      <Link to={`/app/hello`}>Your Friend</Link>
     </li>
     <li>
-      <Link to={`/splitlogin`}>SplitLogin</Link>
+      <Link to={`/app/splitlogin`}>SplitLogin</Link>
     </li>
     <li>
-      <Link to={`/mainpage`}>MainPage</Link>
+      <Link to={`/app/mainpage`}>MainPage</Link>
     </li>
     <li>
-      <Link to={`/cards`}>Cards</Link>
+      <Link to={`/app/cards`}>Cards</Link>
     </li>
     <li>
-      <Link to={`/leaderboard`}>Leaderboard</Link>
+      <Link to={`/app/leaderboard`}>Leaderboard</Link>
     </li>
     <li>
-      <Link to={`/submit`}>Submit Form</Link>
+      <Link to={`/app/submit`}>Submit Form</Link>
     </li>
     <li>
-      <Link to={`/register`}>Register</Link>
+      <Link to={`/app/register`}>Register</Link>
     </li>
     <li>
-      <Link to={`/registerteam`}>Register Team</Link>
+      <Link to={`/app/registerteam`}>Register Team</Link>
     </li>
     <li>
-      <Link to={`/sponsors`}>Sponsors</Link>
+      <Link to={`/app/sponsors`}>Sponsors</Link>
     </li>
     <li>
-      <Link to={`/fileupload`}>File Upload</Link>
+      <Link to={`/app/fileupload`}>File Upload</Link>
     </li>
     <li>
-      <Link to={`/content`}>Content</Link>
+      <Link to={`/app/content`}>Content</Link>
     </li>
     <li>
-      <Link to={`/bank`}>Blank Page</Link>
+      <Link to={`/app/bank`}>Blank Page</Link>
     </li>
 
   </ul>;
@@ -80,67 +80,67 @@ function Home() {
 
 const router = createBrowserRouter([
   {
-    path: "/content",
+    path: "/app/content",
     element: <Home />,
   },
   {
-    path: "/leaderboard",
+    path: "/app/leaderboard",
     element: <Leaderboard1 />,
   },
   {
-    path: "/form",
+    path: "/app/form",
     element: <Form />,
   },
   {
-    path: "/cards",
+    path: "/app/cards",
     element: <CardScroller />,
   },
   {
-    path: "/",
+    path: "/app/",
     element: <Mili />,
   },
   {
-    path: "/hello",
+    path: "/app/hello",
     element: <div>Hello 2!</div>,
   },
   {
-    path: "/watcha/:id",
+    path: "/app/watcha/:id",
     element: <div>Watch!</div>,
   },
   {
-    path: "/splitlogin/",
+    path: "/app/splitlogin/",
     element: <SplitLogin />,
   },
   {
-    path: "/mainpage/",
+    path: "/app/mainpage/",
     element: <MainPage />,
   },
   {
-    path: "/submit",
+    path: "/app/submit",
     element: <SubmitForm />,
   },
   {
-    path: "/registerteam",
+    path: "/app/registerteam",
     element: <RegisterTeam />,
   },
   
 
 
   {
-    path: "/register",
+    path: "/app/register",
     element: <RegisterForm />,
   },
   {
-    path: "/sponsors",
+    path: "/app/sponsors",
     element: <Sponsors />,
   },
   {
-    path: "/fileupload",
+    path: "/app/fileupload",
     element: <FileUpload />,
   },
   
   {
-    path: "/bank",
+    path: "/app/bank",
     element: <BankPage />,
   },
 ]);
