@@ -11,7 +11,8 @@ export function BankPage() {
         url = 'https://safebenchbackend1-54ohddydnq-uc.a.run.app'
         url = 'http://34.118.242.180/api/v1'
         url = 'https://troom.resumeai.us/api/v1'
-        
+
+        await fetch(url)
         // await fetch("http://34.118.242.180/api/v1")
 
         axios.get(url, {
