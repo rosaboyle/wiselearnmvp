@@ -26,6 +26,7 @@ import { Outlet, Link } from "react-router-dom";
 import { MainPage } from './mainpage';
 import { SubmitCourse } from './submitcourse';
 import { SubmitUsers } from './submituserdetails';
+import { Finish } from './finish';
 
 function Home() {
   return <ul>
@@ -35,7 +36,9 @@ function Home() {
     <li>
       <Link to={`/submituserdetails`}>Submit User details</Link>
     </li>
-
+    <li>
+      <Link to={`/finish`}>Finish</Link>
+    </li>
 {/* 
     <li>
       <Link to={`/mili`}>Miligram</Link>
@@ -98,6 +101,11 @@ const router = createBrowserRouter([
   },
 
   {
+    path: "/finish",
+    element: <Finish/>,
+  },
+
+  {
     path: "/content",
     element: <Home />,
   },
@@ -109,7 +117,7 @@ const router = createBrowserRouter([
     path: "/form",
     element: <Form />,
   },
-  
+
   {
     path: "/cards",
     element: <CardScroller />,

@@ -2,6 +2,7 @@ import { UseMilligram } from "./millilib"
 import { NavigationBar } from './mili'
 import axios from "axios";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 export function SubmitUsers() {
@@ -63,6 +64,9 @@ export function SubmitUsers() {
                         <textarea placeholder="Updates: changed .." id="commentField"></textarea>
 
                         <button className="button" type="submit">Submit</button>
+                        <Link to={`/finish`} ><button className="button" type="submit">Next</button></Link>
+
+
                     </fieldset>
                 </form>
             </div>
