@@ -1,10 +1,10 @@
 # Part of the textual content used in this website is generated using openAI chatgpt. These sections are mentioned in the code
 
 
-# Safebench Frontend deployment.
+# Wiselearn
 
 
-# Getting Started with Create React App
+# Getting Started with Development of Wiselearn
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
