@@ -24,10 +24,19 @@ import {
 
 import { Outlet, Link } from "react-router-dom";
 import { MainPage } from './mainpage';
+import { SubmitCourse } from './submitcourse';
+import { SubmitUsers } from './submituserdetails';
 
 function Home() {
   return <ul>
+    <li>
+      <Link to={`/submitcourse`}>Submit Course</Link>
+    </li>
+    <li>
+      <Link to={`/submituserdetails`}>Submit User details</Link>
+    </li>
 
+{/* 
     <li>
       <Link to={`/mili`}>Miligram</Link>
     </li>
@@ -73,12 +82,21 @@ function Home() {
     </li>
     <li>
       <Link to={`/bank`}>Blank Page</Link>
-    </li>
+    </li> */}
 
   </ul>;
 }
 
 const router = createBrowserRouter([
+  {
+    path: "/submitcourse",
+    element: <SubmitCourse />,
+  },
+  {
+    path: "/submituserdetails",
+    element: <SubmitUsers/>,
+  },
+
   {
     path: "/content",
     element: <Home />,
@@ -91,13 +109,14 @@ const router = createBrowserRouter([
     path: "/form",
     element: <Form />,
   },
+  
   {
     path: "/cards",
     element: <CardScroller />,
   },
   {
     path: "/",
-    element: <Mili />,
+    element: <SubmitCourse />,
   },
   {
     path: "/hello",

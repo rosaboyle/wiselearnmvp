@@ -25,14 +25,14 @@ export function NavigationBar() {
 
       {/* <link rel="stylesheet" href="https://milligram.io/styles/main.css" /> */}
       <section className="container">
-        <a href="/"><h1 className="title">SafeBench</h1></a>
+        <a href="/"><h1 className="title">Wiselearn</h1></a>
 
 
 
         <ul className="navigation-list float-right">
           <li className="navigation-item">
-            <a className="navigation-link" href="/registerteam" data-popover
-            >Join Competition</a
+            <a className="navigation-link" href="/uploadcourse" data-popover
+            >Upload Course</a
             >
           </li>
           <li className="navigation-item">
@@ -41,8 +41,8 @@ export function NavigationBar() {
             >
           </li>
           <li className="navigation-item">
-            <a className="navigation-link" href="/sponsors" data-popover
-            >Sponsors</a
+            <a className="navigation-link" href="/aboutus" data-popover
+            >About Us</a
             >
           </li>
           <li className="navigation-item">
