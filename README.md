@@ -1,5 +1,3 @@
-# Part of the textual content used in this website is generated using openAI chatgpt. These sections are mentioned in the code
-
 
 # Wiselearn
 
